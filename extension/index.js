@@ -6,7 +6,6 @@ const createWindow = require('./window');
 const eventListen = require('./event');
 const storage = require('./storage')
 
-
 function activate(context, electron) {
     const { BrowserWindow, globalShortcut, ipcMain, Notification } = electron;
     const win = createWindow(BrowserWindow);

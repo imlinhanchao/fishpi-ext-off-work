@@ -1,6 +1,9 @@
 const path = require('path');
 
+let isListening = false;
 module.exports = function eventListen({ ipcMain, Notification }, getSetting) {
+  if (isListening) return;
+  isListening = true;
   ipcMain.on(`offwork.get.setting`, (event, args) => {
     event.sender.send(`offwork.get.setting.` + args.callback, getSetting())
   });
